@@ -1,0 +1,25 @@
+model:
+  name: mdf
+  arch: bert
+  framework: 
+  scale: base
+  drop_rate: 0.3
+  use_adapter: false
+  epoch_every: true
+  optim_sched: [AdamW_, linear]
+  met_base: mae
+  eps: -0.3
+
+train:
+  device_ids: [0]
+  epochs: 50
+  early_stop: 20
+  batch_size: 32
+  log_step_rate: 1.0
+  learning_rate: 0.001
+  learning_rate_plm: 0.00005
+  save_model: 0
+  inference: 0
+  do_test: true
+  use_wandb: 0
+  use_nni: 1
